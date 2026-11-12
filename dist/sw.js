@@ -1,6 +1,6 @@
 
-const CACHE='home-training-v3-c1914e9f11c7';
-const FILES=["./","./index.html","./icon.svg","./icon-192.png","./icon-512.png","./apple-touch-icon.png","./manifest.webmanifest","./assets/manrope-latin-ext-wght-normal-Ch3YOpNY.woff2","./assets/manrope-vietnamese-wght-normal-usUDDRr7.woff2","./assets/manrope-latin-wght-normal-DHIcAJRg.woff2","./assets/manrope-cyrillic-wght-normal-Dvxsihut.woff2","./assets/dm-sans-latin-ext-wght-normal-BOFOeGcA.woff2","./assets/manrope-greek-wght-normal-DL7QRZyv.woff2","./assets/dm-sans-latin-wght-normal-Xz1IZZA0.woff2","./assets/index-Dd_O0oYa.css","./assets/index-Ct-mnEvh.js"];
+const CACHE='home-training-v3-3e1a6cecf0a5';
+const FILES=["./","./index.html","./icon.svg","./icon-192.png","./icon-512.png","./apple-touch-icon.png","./manifest.webmanifest","./assets/manrope-cyrillic-wght-normal-Dvxsihut.woff2","./assets/manrope-greek-wght-normal-DL7QRZyv.woff2","./assets/manrope-latin-ext-wght-normal-Ch3YOpNY.woff2","./assets/manrope-vietnamese-wght-normal-usUDDRr7.woff2","./assets/dm-sans-latin-ext-wght-normal-BOFOeGcA.woff2","./assets/manrope-latin-wght-normal-DHIcAJRg.woff2","./assets/dm-sans-latin-wght-normal-Xz1IZZA0.woff2","./assets/index-CRSIAmRQ.css","./assets/index-DKdnxLq8.js"];
 const paths=new Set(FILES.map(f=>new URL(f,self.location.href).pathname));
 let networkAvailable=true;
 const announce=()=>self.clients.matchAll({type:'window'}).then(clients=>clients.forEach(client=>client.postMessage({type:'NETWORK_STATUS',online:networkAvailable})));

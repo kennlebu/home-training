@@ -97,3 +97,26 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,su
 .inline-icon {display:inline;vertical-align:middle;margin-right:6px;}
 @media(max-width:1100px){.device-status span:not(.update-dot){display:none;}.device-status{width:38px;padding:8px;}}
 @media(max-width:680px){.device-panel{padding:16px;}.mobile-nav .nav-label{display:block;}.mobile-nav button{min-height:58px;gap:3px;}.top-actions{gap:6px;}.device-status{width:32px;min-width:32px;padding:5px;}}
+
+.training-review {margin-bottom:24px;}
+.training-review h2,.movement-record h2 {font-size:24px;line-height:1.3;}
+.review-totals {display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;border-block:1px solid var(--border);padding:18px 0;margin:20px 0;}
+.review-totals strong {display:block;font-size:28px;font-weight:600;}
+.review-totals span {font-size:12px;color:var(--muted-foreground);}
+.review-next {display:flex;justify-content:space-between;align-items:center;gap:16px;margin-top:18px;}
+.review-next p {margin:4px 0 0;}
+.movement-record {margin-top:24px;}
+.movement-record .field {min-width:200px;margin:0;}
+.movement-record .field select {width:100%;}
+.movement-entry {padding:18px 0;border-top:1px solid var(--border);}
+.movement-entry-head {display:flex;align-items:start;justify-content:space-between;gap:12px;}
+.movement-entry-head p {margin:3px 0 0;}
+.record-sets {list-style:none;padding:0;margin:10px 0 0;}
+.record-sets li {display:grid;grid-template-columns:minmax(65px,1fr) minmax(85px,1fr) minmax(120px,1.3fr);gap:12px;font-size:13px;border-radius:8px;padding:10px 12px;}
+.record-sets li:nth-child(odd) {background:var(--secondary);}
+.adjustment-summary {display:grid;grid-template-columns:1fr 1fr;gap:16px;padding:18px;background:var(--secondary);border-radius:12px;margin:20px 0;}
+.adjustment-summary span {display:block;font-size:12px;color:var(--muted-foreground);}
+.adjustment-summary strong {display:block;font-size:24px;margin-top:5px;}
+.adjustment-rows .list-row>span {white-space:nowrap;font-size:13px;}
+.adjustment-rows p {margin:5px 0 0;}
+@media(max-width:680px){.training-review .section-head,.movement-record .section-head{align-items:start;flex-direction:column;}.review-totals{grid-template-columns:repeat(2,minmax(0,1fr));}.review-next{align-items:stretch;flex-direction:column;}.review-next button{min-height:48px;white-space:normal;}.movement-record .field{width:100%;min-width:0;}.record-sets li{grid-template-columns:1fr 1fr;gap:5px;}.record-sets li>span:last-child{grid-column:1/-1;}.movement-entry-head .pill{white-space:normal;text-align:right;}.adjustment-summary{padding:12px;gap:10px;}.adjustment-summary strong{font-size:21px;}.adjustment-rows .list-row{align-items:start;}}

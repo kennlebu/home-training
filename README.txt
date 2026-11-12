@@ -55,4 +55,18 @@ Wait until the app status says Ready offline before depending on it without a co
 
 External exercise references still need a connection. Timers catch up when the app is reopened. The app does not send background notifications. Records stay in each browser and device, with backup transfer available. The bundled fonts use the SIL Open Font License recorded in THIRD_PARTY_NOTICES.txt.
 
-The 31 automated checks include interrupted downloads, offline navigation and assets with request header variations, cache separation, update activation, preserving unrelated browser caches, and refusing updates during an active session.
+The offline automated checks include interrupted downloads, offline navigation and assets with request header variations, cache separation, update activation, preserving unrelated browser caches, and refusing updates during an active session.
+
+Training review and session adjustments
+
+Version 2.2 adds a training review under Your progress. It uses the last 14 calendar days in the profile timezone and shows completed sessions, partial sessions, sessions marked too hard and sessions with reported discomfort. Partial work is not assumed to mean poor recovery. The latest strength feedback guides the text. Discomfort leads to reviewing movement choices, rather than treating fewer sets as a remedy.
+
+A lighter session can be previewed from Your progress or a planned strength session summary. It removes one set from movements with more than one set, preserving at least one set, the exercise, load, repetition target, rest, date and time limit. The comparison shows every change and recalculates the duration. Accepting changes one planned session only. Restore previous sets is available before starting, provided later edits would not be overwritten and the original work still fits the time slot. Active workouts prevent these changes. A lighter plan is excluded from progression updates.
+
+The optional adjustment record holds the previous and adjusted prescriptions. Backup validation checks both. Existing backup files without this field remain compatible. Session history is not rewritten. A failed browser save leaves the preview open and returns the schedule to its prior in-memory state.
+
+Movement record shows up to eight recent sessions for a chosen recorded exercise. It preserves repetitions, timed holds, single side units, per-hand loads, band names, effort and partial completion. Older records remain in the full history. It does not estimate maximum strength from those records.
+
+src/training-insights.js prepares the review and exercise timelines. src/insights-view.js renders them. src/adaptation.js owns lighter and restore rules. tests/training-review.test.mjs covers history windows, feedback ordering, honest partial records, immutable previews, restoration, backup validation, movement records and progression after an unlogged prescribed movement. There are now 41 passing automated checks.
+
+Browser checks for this phase passed for cancellation, applying and restoring a lighter session, keeping it after reload, protecting an active session, logging two movements and an overall hard effort, changing the movement record, 320 and 390 pixel layouts, and reopening the new review and movement record with the preview server stopped. Physical phone installation and independent trainer review remain outstanding.
