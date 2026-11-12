@@ -1,3 +1,4 @@
+import {VideoDemonstration} from './video-demonstration.jsx';
 import {DeviceStatus,DevicePanel} from './device-ui.jsx';
 import React,{useEffect,useState} from 'react';
 import {createRoot} from 'react-dom/client';
@@ -33,7 +34,7 @@ function attributes(node){const props={};for(const attr of node.attributes){if(a
  return props;
 }
 
-function convert(node,key){if(node.nodeType===3)return node.textContent;if(node.nodeType!==1)return null;const tag=node.tagName.toLowerCase();if(['script','style'].includes(tag))return null;if(node.hasAttribute('data-device-status'))return <DeviceStatus key={key}/>;if(node.hasAttribute('data-device-panel'))return <DevicePanel key={key}/>;if(node.hasAttribute('data-theme-slot'))return <ThemePicker key={key}/>;
+function convert(node,key){if(node.nodeType===3)return node.textContent;if(node.nodeType!==1)return null;const tag=node.tagName.toLowerCase();if(['script','style'].includes(tag))return null;if(node.hasAttribute('data-device-status'))return <DeviceStatus key={key}/>;if(node.hasAttribute('data-device-panel'))return <DevicePanel key={key}/>;if(node.hasAttribute('data-video-slot'))return <VideoDemonstration key={key} exerciseId={node.getAttribute('data-video-slot')}/>;if(node.hasAttribute('data-theme-slot'))return <ThemePicker key={key}/>;
  const props={...attributes(node),key};if(node.classList.contains('nav-icon')){const Icon={home:House,schedule:CalendarDays,library:Dumbbell,progress:TrendingUp,settings:Settings}[node.parentElement?.dataset.nav];if(Icon)return <span {...props}><Icon size={18} aria-hidden="true"/></span>;}const children=tag==='textarea'?undefined:[...node.childNodes].map((child,n)=>convert(child,n));
  if(tag==='button'){const classes=new Set(node.classList);const variant=classes.has('primary')?'default':classes.has('danger-button')?'destructive':classes.has('secondary')||classes.has('button')?'outline':classes.has('text-link')?'link':'ghost';return <Button {...props} variant={variant} data-slot="button">{children}</Button>;}
  if(tag==='input'&&!['checkbox','radio','file','range'].includes(node.type))return <Input {...props} data-slot="input"/>;

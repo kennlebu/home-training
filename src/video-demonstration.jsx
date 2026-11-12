@@ -1,0 +1,12 @@
+import React,{useEffect,useState} from 'react';
+import {Play,ExternalLink,X} from 'lucide-react';
+import {Button} from './components/ui/button';
+import {EXERCISES} from './exercises.js';
+import {MOVEMENT_SOURCES,permittedVideo,videoEmbedURL} from './movement-sources.js';
+export function VideoDemonstration({exerciseId}){
+ const [opened,setOpened]=useState(false),[online,setOnline]=useState(navigator.onLine);
+ useEffect(()=>{const update=()=>setOnline(navigator.onLine);window.addEventListener('online',update);window.addEventListener('offline',update);return()=>{window.removeEventListener('online',update);window.removeEventListener('offline',update);};},[]);
+ const source=MOVEMENT_SOURCES[exerciseId],video=permittedVideo(exerciseId),name=EXERCISES.find(e=>e.id===exerciseId)?.name;
+ if(!video)return null;
+ return <section className="professional-video" aria-label={`Professional video for ${name}`}><div className="section-head"><div><div className="eyebrow">Professional demonstration</div><h3>Watch the movement</h3></div><span className="pill outline">Online video</span></div><p className="small muted">{video.owner}. The video uses YouTube’s player. Loading it connects to YouTube.</p>{video.equipmentNote&&<p className="small muted">{video.equipmentNote}</p>}{!online?<p className="notice">Reconnect to watch the video. Your 3D guide and written cues are available offline.</p>:!opened?<Button variant="outline" onClick={()=>setOpened(true)}><Play aria-hidden="true"/>Load video demonstration</Button>:<><iframe className="professional-player" title={`${name} demonstrated by NASM`} src={videoEmbedURL(exerciseId)} referrerPolicy="strict-origin-when-cross-origin" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowFullScreen/><Button variant="ghost" className="video-close" onClick={()=>setOpened(false)}><X aria-hidden="true"/>Close video</Button></>}<div className="button-row video-links"><a href={`https://www.youtube.com/watch?v=${video.videoId}`} target="_blank" rel="noopener noreferrer">Watch on YouTube <ExternalLink aria-hidden="true" size={13}/></a><a href={source.url} target="_blank" rel="noopener noreferrer">NASM exercise guide <ExternalLink aria-hidden="true" size={13}/></a></div><p className="small muted">If playback is unavailable here, open Watch on YouTube. Use the player’s controls for playback and captions when supplied.</p></section>;
+}

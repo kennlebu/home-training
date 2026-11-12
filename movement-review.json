@@ -1,0 +1,405 @@
+{
+  "checkedOn": "2026-11-12",
+  "version": "2.3.0",
+  "summary": {
+    "geometryChecked": 27,
+    "movementReferenceChecks": 11,
+    "providerVideos": 8,
+    "independentTrainerReview": "pending"
+  },
+  "videoPolicy": {
+    "checkedOn": "2026-11-12",
+    "terms": "https://www.youtube.com/t/terms",
+    "guidance": "https://support.google.com/youtube/answer/171780?hl=en",
+    "scope": "Use the unmodified provider player only. No downloading, rehosting, extraction or offline video caching. Keep provider controls, attribution and an external watch link. Embedding availability can change."
+  },
+  "exercises": [
+    {
+      "id": "squat",
+      "name": "Bodyweight squat",
+      "motion": "squat",
+      "geometryChecks": "Fixed limb lengths, finite coordinates and non-negative joint heights sampled throughout both sides.",
+      "referenceCheck": {
+        "status": "Individual reference review pending. This release applies shared geometry corrections only.",
+        "existingReference": "https://www.nhs.uk/live-well/exercise/strength-exercises/"
+      },
+      "independentTrainerReview": "pending"
+    },
+    {
+      "id": "goblet",
+      "name": "Goblet squat",
+      "motion": "goblet",
+      "geometryChecks": "Fixed limb lengths, finite coordinates and non-negative joint heights sampled throughout both sides.",
+      "referenceCheck": {
+        "provider": "National Academy of Sports Medicine (NASM)",
+        "url": "https://www.nasm.org/resource-center/exercise-library/goblet-squat",
+        "checkedOn": "2026-11-12",
+        "changes": "Keep the dumbbell upright near the chest, heels steady and knee movement aligned with the feet.",
+        "video": {
+          "provider": "YouTube",
+          "videoId": "nfX7IFK9UNI",
+          "owner": "National Academy of Sports Medicine (NASM)",
+          "permission": "provider-embed",
+          "checkedOn": "2026-11-12",
+          "verification": "Linked by NASM. YouTube oEmbed returned the matching NASM title, owner and embed player.",
+          "equipmentNote": "This video uses a kettlebell. Our illustration shows the dumbbell version."
+        }
+      },
+      "independentTrainerReview": "pending"
+    },
+    {
+      "id": "split",
+      "name": "Split squat",
+      "motion": "split",
+      "geometryChecks": "Fixed limb lengths, finite coordinates and non-negative joint heights sampled throughout both sides.",
+      "referenceCheck": {
+        "provider": "Catalyst Athletics",
+        "url": "https://www.catalystathletics.com/exercise/174/Split-Squat/",
+        "checkedOn": "2026-11-12",
+        "changes": "Use the split stance and knee bending as a movement reference. Our bodyweight variation does not reproduce the source’s barbell loading.",
+        "video": null
+      },
+      "independentTrainerReview": "pending"
+    },
+    {
+      "id": "hinge",
+      "name": "Dumbbell Romanian deadlift",
+      "motion": "hinge",
+      "geometryChecks": "Fixed limb lengths, finite coordinates and non-negative joint heights sampled throughout both sides.",
+      "referenceCheck": {
+        "provider": "National Academy of Sports Medicine (NASM)",
+        "url": "https://www.nasm.org/resource-center/exercise-library/dumbbell-romanian-deadlift",
+        "checkedOn": "2026-11-12",
+        "changes": "Use a hip-led hinge, a consistent trunk and neck line, and a close dumbbell path.",
+        "video": {
+          "provider": "YouTube",
+          "videoId": "V8Hdl1FiNt4",
+          "owner": "National Academy of Sports Medicine (NASM)",
+          "permission": "provider-embed",
+          "checkedOn": "2026-11-12",
+          "verification": "Linked by NASM. YouTube oEmbed returned the matching NASM title, owner and embed player."
+        }
+      },
+      "independentTrainerReview": "pending"
+    },
+    {
+      "id": "bridge",
+      "name": "Glute bridge",
+      "motion": "bridge",
+      "geometryChecks": "Fixed limb lengths, finite coordinates and non-negative joint heights sampled throughout both sides.",
+      "referenceCheck": {
+        "provider": "National Academy of Sports Medicine (NASM)",
+        "url": "https://www.nasm.org/resource-center/exercise-library/floor-bridge",
+        "checkedOn": "2026-11-12",
+        "changes": "Keep shoulders and feet supported while the hips rise.",
+        "video": {
+          "provider": "YouTube",
+          "videoId": "Z3cY3d3BBo4",
+          "owner": "National Academy of Sports Medicine (NASM)",
+          "permission": "provider-embed",
+          "checkedOn": "2026-11-12",
+          "verification": "Linked by NASM. YouTube oEmbed returned the matching NASM title, owner and embed player."
+        }
+      },
+      "independentTrainerReview": "pending"
+    },
+    {
+      "id": "band-bridge",
+      "name": "Band glute bridge",
+      "motion": "bandbridge",
+      "geometryChecks": "Fixed limb lengths, finite coordinates and non-negative joint heights sampled throughout both sides.",
+      "referenceCheck": {
+        "status": "Individual reference review pending. This release applies shared geometry corrections only.",
+        "existingReference": "https://www.acefitness.org/resources/everyone/exercise-library/"
+      },
+      "independentTrainerReview": "pending"
+    },
+    {
+      "id": "row",
+      "name": "Standing dumbbell row",
+      "motion": "row",
+      "geometryChecks": "Fixed limb lengths, finite coordinates and non-negative joint heights sampled throughout both sides.",
+      "referenceCheck": {
+        "status": "Individual reference review pending. This release applies shared geometry corrections only.",
+        "existingReference": "https://www.acefitness.org/resources/everyone/exercise-library/"
+      },
+      "independentTrainerReview": "pending"
+    },
+    {
+      "id": "band-row",
+      "name": "Standing band row",
+      "motion": "bandrow",
+      "geometryChecks": "Fixed limb lengths, finite coordinates and non-negative joint heights sampled throughout both sides.",
+      "referenceCheck": {
+        "status": "Individual reference review pending. This release applies shared geometry corrections only.",
+        "existingReference": "https://www.acefitness.org/resources/everyone/exercise-library/"
+      },
+      "independentTrainerReview": "pending"
+    },
+    {
+      "id": "floor-press",
+      "name": "Dumbbell floor press",
+      "motion": "floorpress",
+      "geometryChecks": "Fixed limb lengths, finite coordinates and non-negative joint heights sampled throughout both sides.",
+      "referenceCheck": {
+        "status": "Individual reference review pending. This release applies shared geometry corrections only.",
+        "existingReference": "https://www.acefitness.org/resources/everyone/exercise-library/"
+      },
+      "independentTrainerReview": "pending"
+    },
+    {
+      "id": "wall-push",
+      "name": "Wall push up",
+      "motion": "wallpush",
+      "geometryChecks": "Fixed limb lengths, finite coordinates and non-negative joint heights sampled throughout both sides.",
+      "referenceCheck": {
+        "status": "Individual reference review pending. This release applies shared geometry corrections only.",
+        "existingReference": "https://www.nhs.uk/live-well/exercise/strength-exercises/"
+      },
+      "independentTrainerReview": "pending"
+    },
+    {
+      "id": "pushup",
+      "name": "Push up",
+      "motion": "pushup",
+      "geometryChecks": "Fixed limb lengths, finite coordinates and non-negative joint heights sampled throughout both sides.",
+      "referenceCheck": {
+        "provider": "National Academy of Sports Medicine (NASM)",
+        "url": "https://www.nasm.org/resource-center/exercise-library/push-up",
+        "checkedOn": "2026-11-12",
+        "changes": "Keep hands and toes supported while the trunk moves with the press.",
+        "video": {
+          "provider": "YouTube",
+          "videoId": "WDIpL0pjun0",
+          "owner": "National Academy of Sports Medicine (NASM)",
+          "permission": "provider-embed",
+          "checkedOn": "2026-11-12",
+          "verification": "Linked by NASM. YouTube oEmbed returned the matching NASM title, owner and embed player."
+        }
+      },
+      "independentTrainerReview": "pending"
+    },
+    {
+      "id": "press",
+      "name": "Standing dumbbell press",
+      "motion": "press",
+      "geometryChecks": "Fixed limb lengths, finite coordinates and non-negative joint heights sampled throughout both sides.",
+      "referenceCheck": {
+        "status": "Individual reference review pending. This release applies shared geometry corrections only.",
+        "existingReference": "https://www.acefitness.org/resources/everyone/exercise-library/"
+      },
+      "independentTrainerReview": "pending"
+    },
+    {
+      "id": "deadbug",
+      "name": "Dead bug",
+      "motion": "deadbug",
+      "geometryChecks": "Fixed limb lengths, finite coordinates and non-negative joint heights sampled throughout both sides.",
+      "referenceCheck": {
+        "provider": "National Academy of Sports Medicine (NASM)",
+        "url": "https://www.nasm.org/resource-center/exercise-library/dead-bug",
+        "checkedOn": "2026-11-12",
+        "changes": "Show opposite arm and leg reaches on both sides while keeping the trunk still.",
+        "video": {
+          "provider": "YouTube",
+          "videoId": "bxn9FBrt4-A",
+          "owner": "National Academy of Sports Medicine (NASM)",
+          "permission": "provider-embed",
+          "checkedOn": "2026-11-12",
+          "verification": "Linked by NASM. YouTube oEmbed returned the matching NASM title, owner and embed player."
+        }
+      },
+      "independentTrainerReview": "pending"
+    },
+    {
+      "id": "birddog",
+      "name": "Bird dog",
+      "motion": "birddog",
+      "geometryChecks": "Fixed limb lengths, finite coordinates and non-negative joint heights sampled throughout both sides.",
+      "referenceCheck": {
+        "provider": "National Academy of Sports Medicine (NASM)",
+        "url": "https://www.nasm.org/resource-center/exercise-library/bird-dog",
+        "checkedOn": "2026-11-12",
+        "changes": "Show both opposite-limb reaches, supporting hand and knee contact, and a stable trunk.",
+        "video": {
+          "provider": "YouTube",
+          "videoId": "ZdAHe9_HeEw",
+          "owner": "National Academy of Sports Medicine (NASM)",
+          "permission": "provider-embed",
+          "checkedOn": "2026-11-12",
+          "verification": "Linked by NASM. YouTube oEmbed returned the matching NASM title, owner and embed player."
+        }
+      },
+      "independentTrainerReview": "pending"
+    },
+    {
+      "id": "plank",
+      "name": "Forearm plank",
+      "motion": "plank",
+      "geometryChecks": "Fixed limb lengths, finite coordinates and non-negative joint heights sampled throughout both sides.",
+      "referenceCheck": {
+        "provider": "National Academy of Sports Medicine (NASM)",
+        "url": "https://www.nasm.org/resource-center/exercise-library/plank",
+        "checkedOn": "2026-11-12",
+        "changes": "Align the trunk and legs with elbows below the shoulders. Keep the hold still.",
+        "video": {
+          "provider": "YouTube",
+          "videoId": "mwlp75MS6Rg",
+          "owner": "National Academy of Sports Medicine (NASM)",
+          "permission": "provider-embed",
+          "checkedOn": "2026-11-12",
+          "verification": "Linked by NASM. YouTube oEmbed returned the matching NASM title, owner and embed player."
+        }
+      },
+      "independentTrainerReview": "pending"
+    },
+    {
+      "id": "sideplank",
+      "name": "Side plank",
+      "motion": "sideplank",
+      "geometryChecks": "Fixed limb lengths, finite coordinates and non-negative joint heights sampled throughout both sides.",
+      "referenceCheck": {
+        "provider": "National Academy of Sports Medicine (NASM)",
+        "url": "https://www.nasm.org/resource-center/exercise-library/side-plank",
+        "checkedOn": "2026-11-12",
+        "changes": "Show support through the lower forearm and both side choices.",
+        "video": {
+          "provider": "YouTube",
+          "videoId": "44ND4bOB-T0",
+          "owner": "National Academy of Sports Medicine (NASM)",
+          "permission": "provider-embed",
+          "checkedOn": "2026-11-12",
+          "verification": "Linked by NASM. YouTube oEmbed returned the matching NASM title, owner and embed player."
+        }
+      },
+      "independentTrainerReview": "pending"
+    },
+    {
+      "id": "calf",
+      "name": "Calf raise",
+      "motion": "calf",
+      "geometryChecks": "Fixed limb lengths, finite coordinates and non-negative joint heights sampled throughout both sides.",
+      "referenceCheck": {
+        "status": "Individual reference review pending. This release applies shared geometry corrections only.",
+        "existingReference": "https://www.nhs.uk/live-well/exercise/strength-exercises/"
+      },
+      "independentTrainerReview": "pending"
+    },
+    {
+      "id": "ball-curl",
+      "name": "Stability ball leg curl",
+      "motion": "ballcurl",
+      "geometryChecks": "Fixed limb lengths, finite coordinates and non-negative joint heights sampled throughout both sides.",
+      "referenceCheck": {
+        "provider": "American Council on Exercise (ACE)",
+        "url": "https://www.acefitness.org/resources/everyone/exercise-library/59/stability-ball-hamstring-curl/",
+        "checkedOn": "2026-11-12",
+        "changes": "Keep the shoulders supported and the heels on the moving ball.",
+        "video": null
+      },
+      "independentTrainerReview": "pending"
+    },
+    {
+      "id": "ball-squat",
+      "name": "Ball wall squat",
+      "motion": "ballsquat",
+      "geometryChecks": "Fixed limb lengths, finite coordinates and non-negative joint heights sampled throughout both sides.",
+      "referenceCheck": {
+        "provider": "American Council on Exercise (ACE)",
+        "url": "https://www.acefitness.org/resources/everyone/exercise-library/69/stability-ball-wall-squats/",
+        "checkedOn": "2026-11-12",
+        "changes": "Keep the feet in front of the body and the ball against both the back and wall as it rolls.",
+        "video": null
+      },
+      "independentTrainerReview": "pending"
+    },
+    {
+      "id": "wheel",
+      "name": "Kneeling ab wheel rollout",
+      "motion": "wheel",
+      "geometryChecks": "Fixed limb lengths, finite coordinates and non-negative joint heights sampled throughout both sides.",
+      "referenceCheck": {
+        "status": "Individual reference review pending. This release applies shared geometry corrections only.",
+        "existingReference": "https://www.acefitness.org/resources/everyone/exercise-library/"
+      },
+      "independentTrainerReview": "pending"
+    },
+    {
+      "id": "bench",
+      "name": "Dumbbell bench press",
+      "motion": "benchpress",
+      "geometryChecks": "Fixed limb lengths, finite coordinates and non-negative joint heights sampled throughout both sides.",
+      "referenceCheck": {
+        "status": "Individual reference review pending. This release applies shared geometry corrections only.",
+        "existingReference": "https://www.acefitness.org/resources/everyone/exercise-library/"
+      },
+      "independentTrainerReview": "pending"
+    },
+    {
+      "id": "cable-row",
+      "name": "Seated cable row",
+      "motion": "cablerow",
+      "geometryChecks": "Fixed limb lengths, finite coordinates and non-negative joint heights sampled throughout both sides.",
+      "referenceCheck": {
+        "status": "Individual reference review pending. This release applies shared geometry corrections only.",
+        "existingReference": "https://www.acefitness.org/resources/everyone/exercise-library/"
+      },
+      "independentTrainerReview": "pending"
+    },
+    {
+      "id": "lat-pull",
+      "name": "Lat pulldown",
+      "motion": "latpull",
+      "geometryChecks": "Fixed limb lengths, finite coordinates and non-negative joint heights sampled throughout both sides.",
+      "referenceCheck": {
+        "status": "Individual reference review pending. This release applies shared geometry corrections only.",
+        "existingReference": "https://www.acefitness.org/resources/everyone/exercise-library/"
+      },
+      "independentTrainerReview": "pending"
+    },
+    {
+      "id": "leg-press",
+      "name": "Leg press",
+      "motion": "legpress",
+      "geometryChecks": "Fixed limb lengths, finite coordinates and non-negative joint heights sampled throughout both sides.",
+      "referenceCheck": {
+        "status": "Individual reference review pending. This release applies shared geometry corrections only.",
+        "existingReference": "https://www.acefitness.org/resources/everyone/exercise-library/"
+      },
+      "independentTrainerReview": "pending"
+    },
+    {
+      "id": "barbell-rdl",
+      "name": "Barbell Romanian deadlift",
+      "motion": "barbellhinge",
+      "geometryChecks": "Fixed limb lengths, finite coordinates and non-negative joint heights sampled throughout both sides.",
+      "referenceCheck": {
+        "status": "Individual reference review pending. This release applies shared geometry corrections only.",
+        "existingReference": "https://www.acefitness.org/resources/everyone/exercise-library/"
+      },
+      "independentTrainerReview": "pending"
+    },
+    {
+      "id": "curl",
+      "name": "Dumbbell curl",
+      "motion": "curl",
+      "geometryChecks": "Fixed limb lengths, finite coordinates and non-negative joint heights sampled throughout both sides.",
+      "referenceCheck": {
+        "status": "Individual reference review pending. This release applies shared geometry corrections only.",
+        "existingReference": "https://www.acefitness.org/resources/everyone/exercise-library/"
+      },
+      "independentTrainerReview": "pending"
+    },
+    {
+      "id": "march",
+      "name": "Brisk march",
+      "motion": "march",
+      "geometryChecks": "Fixed limb lengths, finite coordinates and non-negative joint heights sampled throughout both sides.",
+      "referenceCheck": {
+        "status": "Individual reference review pending. This release applies shared geometry corrections only.",
+        "existingReference": "https://www.acefitness.org/resources/everyone/exercise-library/"
+      },
+      "independentTrainerReview": "pending"
+    }
+  ]
+}

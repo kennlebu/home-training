@@ -217,3 +217,10 @@ INCLUDING ANY GENERAL, SPECIAL, INDIRECT, INCIDENTAL, OR CONSEQUENTIAL
 DAMAGES, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
 FROM, OUT OF THE USE OR INABILITY TO USE THE FONT SOFTWARE OR FROM
 OTHER DEALINGS IN THE FONT SOFTWARE.
+
+
+Professional reference links and optional YouTube videos
+
+NASM, ACE and Catalyst Athletics remain the owners of their respective reference material. Links and short attribution identify the professional guidance used to check our original illustrations. These organisations have not reviewed, approved or endorsed this app.
+
+The eight optional NASM demonstrations use YouTube's unmodified embedded player. They are not bundled or licensed for offline redistribution. NASM owns its videos and YouTube serves them under its platform terms. The embedding check and precise exercise list are recorded in movement-review.json and src/movement-sources.js. No MoveKit or MuscleWiki media is used.
