@@ -16,6 +16,17 @@ export function solveLimb(root,target,hint,upper,lower){
 }
 export function constrainPose(source,motion,progress=0){
  const p=structuredClone(source);let spine=unit(sub(p.chest,p.hip));
+ if(motion==='wallpush'){
+  spine=[0,Math.cos(.28*progress),Math.sin(.28*progress)];
+  const ankle=mul(add(p.la,p.ra),.5),legLength=Math.sqrt((SEGMENTS.thigh+SEGMENTS.shin)**2-.07**2);
+  p.hip=add(ankle,mul(spine,legLength+.03));p.chest=add(p.hip,mul(spine,SEGMENTS.spine));
+  for(const side of ['l','r']){const sign=side==='l'?-1:1;p[side+'h']=[sign*.23,1.45,.64];p[side+'e']=[sign*(.24+.16*progress),1.4,.45];}
+ }
+ if(motion==='calf'){
+  const angle=.45*progress,dy=.06+.03*Math.cos(angle)+.19*Math.sin(angle)-.09,dz=.19+.03*Math.sin(angle)-.19*Math.cos(angle);
+  for(const key of Object.keys(p))if(!['lf','rf'].includes(key)){const settle=['la','ra'].includes(key)?0:.09+Math.sqrt((SEGMENTS.thigh+SEGMENTS.shin)**2-.07**2)-1.02;p[key]=add(p[key],[0,dy+settle,dz]);}
+  for(const side of ['l','r']){const x=side==='l'?-.23:.23;p[side+'h']=[x,1.42,.55];p[side+'e']=[x,1.3,.28];}
+ }
  if(motion==='wheel'){
   const knee=[0,.08,.45],desired=sub(sub(p.hip,mul(spine,.03)),knee);desired[0]=0;
   const pelvis=add(knee,mul(unit(desired),Math.sqrt(SEGMENTS.thigh**2-.02**2)));
@@ -36,6 +47,15 @@ export function constrainPose(source,motion,progress=0){
  p.ls=add(shoulderCenter,mul(shoulders,-.23));p.rs=add(shoulderCenter,mul(shoulders,.23));
  p.lp=add(pelvisCenter,mul(pelvis,-.13));p.rp=add(pelvisCenter,mul(pelvis,.13));
  if(!supine){p.neck=add(p.chest,mul(spine,.18));p.head=add(p.neck,mul(spine,.14));}
+ if(motion==='row')for(const side of ['l','r']){
+  const sign=side==='l'?-1:1,start=add(p[side+'s'],[0,-SEGMENTS.upperArm-SEGMENTS.forearm,0]),end=[sign*.29,1.02,-.04];
+  p[side+'h']=start.map((v,i)=>v+(end[i]-v)*progress);p[side+'e']=[sign*.29,1.22,-.12];
+ }
+ if(motion==='wheel')for(const side of ['l','r']){
+  const shoulder=p[side+'s'],x=side==='l'?-.17:.17,y=.13,armLength=SEGMENTS.upperArm+SEGMENTS.forearm;
+  p[side+'h']=[x,y,shoulder[2]-Math.sqrt(Math.max(0,armLength**2-(shoulder[1]-y)**2-(shoulder[0]-x)**2))];
+  p[side+'e']=add(shoulder,mul(sub(p[side+'h'],shoulder),SEGMENTS.upperArm/armLength));
+ }
  if(motion==='deadbug'){
   const angle=progress*Math.acos(.05/(SEGMENTS.upperArm+SEGMENTS.forearm)),armLength=SEGMENTS.upperArm+SEGMENTS.forearm;
   p.lh=add(p.ls,[0,armLength*Math.cos(angle),-armLength*Math.sin(angle)]);

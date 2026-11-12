@@ -1,12 +1,17 @@
 {
   "checkedOn": "2026-11-12",
-  "version": "2.3.0",
+  "version": "2.4.0",
   "summary": {
     "geometryChecked": 27,
-    "movementReferenceChecks": 11,
+    "movementReferenceChecks": 27,
+    "newReferenceChecks": 16,
+    "newMotionOrEquipmentCorrections": 12,
+    "retainedAfterComparison": 4,
     "providerVideos": 8,
     "independentTrainerReview": "pending"
   },
+  "method": "Compare the authored illustration with the specific linked movement instructions. Record key mechanics, equipment differences and the resulting changes. This is a source comparison, not an assessment or endorsement by the source author.",
+  "appearance": "Original shaded human surfaces fitted to the existing movement skeleton. Shaped torso and limbs, hands, shoes, clothing and facial direction cues. No external character, animation or media was copied.",
   "videoPolicy": {
     "checkedOn": "2026-11-12",
     "terms": "https://www.youtube.com/t/terms",
@@ -18,10 +23,21 @@
       "id": "squat",
       "name": "Bodyweight squat",
       "motion": "squat",
-      "geometryChecks": "Fixed limb lengths, finite coordinates and non-negative joint heights sampled throughout both sides.",
+      "geometryChecks": "Fixed limb lengths, finite coordinates and non-negative joint heights sampled throughout both sides. Human surfaces and equipment checked against phone framing.",
       "referenceCheck": {
-        "status": "Individual reference review pending. This release applies shared geometry corrections only.",
-        "existingReference": "https://www.nhs.uk/live-well/exercise/strength-exercises/"
+        "provider": "American Council on Exercise (ACE)",
+        "url": "https://www.acefitness.org/resources/everyone/exercise-library/135/bodyweight-squat/",
+        "checkedOn": "2026-11-12",
+        "criteria": [
+          "Keep heels planted.",
+          "Let knees follow the direction of the toes.",
+          "Move the hips and trunk together through a controlled depth."
+        ],
+        "changes": "Turn the illustrated toes slightly out to agree with the knee direction. Retain the planted feet and controlled squat.",
+        "variantNote": "Our arms reach forward for balance. The reference begins with arms at the sides.",
+        "reviewOutcome": "updated",
+        "scope": "Movement mechanics only. Source programmes and clinical advice are not adopted. This is a reference comparison, not professional approval.",
+        "video": null
       },
       "independentTrainerReview": "pending"
     },
@@ -29,7 +45,7 @@
       "id": "goblet",
       "name": "Goblet squat",
       "motion": "goblet",
-      "geometryChecks": "Fixed limb lengths, finite coordinates and non-negative joint heights sampled throughout both sides.",
+      "geometryChecks": "Fixed limb lengths, finite coordinates and non-negative joint heights sampled throughout both sides. Human surfaces and equipment checked against phone framing.",
       "referenceCheck": {
         "provider": "National Academy of Sports Medicine (NASM)",
         "url": "https://www.nasm.org/resource-center/exercise-library/goblet-squat",
@@ -51,7 +67,7 @@
       "id": "split",
       "name": "Split squat",
       "motion": "split",
-      "geometryChecks": "Fixed limb lengths, finite coordinates and non-negative joint heights sampled throughout both sides.",
+      "geometryChecks": "Fixed limb lengths, finite coordinates and non-negative joint heights sampled throughout both sides. Human surfaces and equipment checked against phone framing.",
       "referenceCheck": {
         "provider": "Catalyst Athletics",
         "url": "https://www.catalystathletics.com/exercise/174/Split-Squat/",
@@ -65,7 +81,7 @@
       "id": "hinge",
       "name": "Dumbbell Romanian deadlift",
       "motion": "hinge",
-      "geometryChecks": "Fixed limb lengths, finite coordinates and non-negative joint heights sampled throughout both sides.",
+      "geometryChecks": "Fixed limb lengths, finite coordinates and non-negative joint heights sampled throughout both sides. Human surfaces and equipment checked against phone framing.",
       "referenceCheck": {
         "provider": "National Academy of Sports Medicine (NASM)",
         "url": "https://www.nasm.org/resource-center/exercise-library/dumbbell-romanian-deadlift",
@@ -86,7 +102,7 @@
       "id": "bridge",
       "name": "Glute bridge",
       "motion": "bridge",
-      "geometryChecks": "Fixed limb lengths, finite coordinates and non-negative joint heights sampled throughout both sides.",
+      "geometryChecks": "Fixed limb lengths, finite coordinates and non-negative joint heights sampled throughout both sides. Human surfaces and equipment checked against phone framing.",
       "referenceCheck": {
         "provider": "National Academy of Sports Medicine (NASM)",
         "url": "https://www.nasm.org/resource-center/exercise-library/floor-bridge",
@@ -107,10 +123,21 @@
       "id": "band-bridge",
       "name": "Band glute bridge",
       "motion": "bandbridge",
-      "geometryChecks": "Fixed limb lengths, finite coordinates and non-negative joint heights sampled throughout both sides.",
+      "geometryChecks": "Fixed limb lengths, finite coordinates and non-negative joint heights sampled throughout both sides. Human surfaces and equipment checked against phone framing.",
       "referenceCheck": {
-        "status": "Individual reference review pending. This release applies shared geometry corrections only.",
-        "existingReference": "https://www.acefitness.org/resources/everyone/exercise-library/"
+        "provider": "American Council on Exercise (ACE)",
+        "url": "https://www.acefitness.org/resources/everyone/blog/6972/booty-bootcamp-glute-exercises-for-low-back-relief/",
+        "checkedOn": "2026-11-12",
+        "criteria": [
+          "Place the loop band above the knees.",
+          "Keep feet and shoulders supported.",
+          "Lift the hips without letting the knees collapse inward."
+        ],
+        "changes": "Move the band drawing onto the lower thighs above the knees. Retain the supported bridge and aligned knees.",
+        "variantNote": "The comparison uses the article’s Hip Bridge With Abduction section. Its programme and pain-related claims are outside this review.",
+        "reviewOutcome": "updated",
+        "scope": "Movement mechanics only. Source programmes and clinical advice are not adopted. This is a reference comparison, not professional approval.",
+        "video": null
       },
       "independentTrainerReview": "pending"
     },
@@ -118,10 +145,21 @@
       "id": "row",
       "name": "Standing dumbbell row",
       "motion": "row",
-      "geometryChecks": "Fixed limb lengths, finite coordinates and non-negative joint heights sampled throughout both sides.",
+      "geometryChecks": "Fixed limb lengths, finite coordinates and non-negative joint heights sampled throughout both sides. Human surfaces and equipment checked against phone framing.",
       "referenceCheck": {
-        "status": "Individual reference review pending. This release applies shared geometry corrections only.",
-        "existingReference": "https://www.acefitness.org/resources/everyone/exercise-library/"
+        "provider": "American Council on Exercise (ACE)",
+        "url": "https://www.acefitness.org/continuing-education/prosource/november-2014/5082/book-review-strength-training-for-fat-loss/",
+        "checkedOn": "2026-11-12",
+        "criteria": [
+          "Hold the hip hinge steady.",
+          "Begin with arms hanging beneath the shoulders.",
+          "Draw elbows back and weights towards the sides of the abdomen."
+        ],
+        "changes": "Start the weights directly below the shoulders and finish closer to the lower abdomen instead of curling the weights forward.",
+        "variantNote": "The comparison uses Bent-over Row in the Bilateral Farmer’s Walk Complex. Our illustration uses a moderate hinge angle and does not prescribe that workout.",
+        "reviewOutcome": "updated",
+        "scope": "Movement mechanics only. Source programmes and clinical advice are not adopted. This is a reference comparison, not professional approval.",
+        "video": null
       },
       "independentTrainerReview": "pending"
     },
@@ -129,10 +167,21 @@
       "id": "band-row",
       "name": "Standing band row",
       "motion": "bandrow",
-      "geometryChecks": "Fixed limb lengths, finite coordinates and non-negative joint heights sampled throughout both sides.",
+      "geometryChecks": "Fixed limb lengths, finite coordinates and non-negative joint heights sampled throughout both sides. Human surfaces and equipment checked against phone framing.",
       "referenceCheck": {
-        "status": "Individual reference review pending. This release applies shared geometry corrections only.",
-        "existingReference": "https://www.acefitness.org/resources/everyone/exercise-library/"
+        "provider": "American Academy of Orthopaedic Surgeons (AAOS)",
+        "url": "https://www.orthoinfo.org/bodypart/shoulder/rotator-cuff-and-shoulder-conditioning-program/",
+        "checkedOn": "2026-11-12",
+        "criteria": [
+          "Keep the trunk steady.",
+          "Keep the pulling elbows near the sides.",
+          "Pull back and return under control."
+        ],
+        "changes": "Retain the stable trunk and close-elbow pull. Add the specific reference and explain the two-arm variation.",
+        "variantNote": "The Standing Row reference shows one arm. Our illustration uses both arms. Follow your band and anchor manufacturer’s instructions. The rehabilitation programme is not adopted.",
+        "reviewOutcome": "retained",
+        "scope": "Movement mechanics only. Source programmes and clinical advice are not adopted. This is a reference comparison, not professional approval.",
+        "video": null
       },
       "independentTrainerReview": "pending"
     },
@@ -140,10 +189,21 @@
       "id": "floor-press",
       "name": "Dumbbell floor press",
       "motion": "floorpress",
-      "geometryChecks": "Fixed limb lengths, finite coordinates and non-negative joint heights sampled throughout both sides.",
+      "geometryChecks": "Fixed limb lengths, finite coordinates and non-negative joint heights sampled throughout both sides. Human surfaces and equipment checked against phone framing.",
       "referenceCheck": {
-        "status": "Individual reference review pending. This release applies shared geometry corrections only.",
-        "existingReference": "https://www.acefitness.org/resources/everyone/exercise-library/"
+        "provider": "National Strength and Conditioning Association (NSCA)",
+        "url": "https://www.nsca.com/certification/tsac-f/essentials-of-tactical-strength-training-and-conditioning-2nd-edition/excerpts/modification-of-exercises-to-allow-injured-individuals-to-continue-training/",
+        "checkedOn": "2026-11-12",
+        "criteria": [
+          "Keep the back and feet supported by the floor.",
+          "Limit the descent when the upper arms meet the floor.",
+          "Press above the chest without bouncing off the floor."
+        ],
+        "changes": "Lower the elbows to floor contact with wrists above them, then press vertically above the chest.",
+        "variantNote": "Figure 16.15 demonstrates the dumbbell floor press. Only the floor-limited movement is used. The source’s injury modifications and treatment decisions are outside this review.",
+        "reviewOutcome": "updated",
+        "scope": "Movement mechanics only. Source programmes and clinical advice are not adopted. This is a reference comparison, not professional approval.",
+        "video": null
       },
       "independentTrainerReview": "pending"
     },
@@ -151,10 +211,21 @@
       "id": "wall-push",
       "name": "Wall push up",
       "motion": "wallpush",
-      "geometryChecks": "Fixed limb lengths, finite coordinates and non-negative joint heights sampled throughout both sides.",
+      "geometryChecks": "Fixed limb lengths, finite coordinates and non-negative joint heights sampled throughout both sides. Human surfaces and equipment checked against phone framing.",
       "referenceCheck": {
-        "status": "Individual reference review pending. This release applies shared geometry corrections only.",
-        "existingReference": "https://www.nhs.uk/live-well/exercise/strength-exercises/"
+        "provider": "NHS",
+        "url": "https://www.nhs.uk/live-well/exercise/strength-exercises/",
+        "checkedOn": "2026-11-12",
+        "criteria": [
+          "Place hands against the wall around chest height.",
+          "Keep the body straight while bending the elbows.",
+          "Keep feet planted and push away smoothly."
+        ],
+        "changes": "Move the hips and chest together around the ankles while keeping the hands against the wall.",
+        "variantNote": "",
+        "reviewOutcome": "updated",
+        "scope": "Movement mechanics only. Source programmes and clinical advice are not adopted. This is a reference comparison, not professional approval.",
+        "video": null
       },
       "independentTrainerReview": "pending"
     },
@@ -162,7 +233,7 @@
       "id": "pushup",
       "name": "Push up",
       "motion": "pushup",
-      "geometryChecks": "Fixed limb lengths, finite coordinates and non-negative joint heights sampled throughout both sides.",
+      "geometryChecks": "Fixed limb lengths, finite coordinates and non-negative joint heights sampled throughout both sides. Human surfaces and equipment checked against phone framing.",
       "referenceCheck": {
         "provider": "National Academy of Sports Medicine (NASM)",
         "url": "https://www.nasm.org/resource-center/exercise-library/push-up",
@@ -183,10 +254,21 @@
       "id": "press",
       "name": "Standing dumbbell press",
       "motion": "press",
-      "geometryChecks": "Fixed limb lengths, finite coordinates and non-negative joint heights sampled throughout both sides.",
+      "geometryChecks": "Fixed limb lengths, finite coordinates and non-negative joint heights sampled throughout both sides. Human surfaces and equipment checked against phone framing.",
       "referenceCheck": {
-        "status": "Individual reference review pending. This release applies shared geometry corrections only.",
-        "existingReference": "https://www.acefitness.org/resources/everyone/exercise-library/"
+        "provider": "American Council on Exercise (ACE)",
+        "url": "https://www.acefitness.org/resources/pros/expert-articles/5480/20-minute-opposing-superset-workout/",
+        "checkedOn": "2026-11-12",
+        "criteria": [
+          "Stand upright with a steady trunk.",
+          "Begin with bent elbows and weights around ear or shoulder height.",
+          "Press overhead and return under control."
+        ],
+        "changes": "Retain the upright overhead press. Clarify the wrist-over-elbow cue.",
+        "variantNote": "The comparison uses Dumbbell Shoulder Press in Superset 3. It does not adopt the surrounding workout.",
+        "reviewOutcome": "retained",
+        "scope": "Movement mechanics only. Source programmes and clinical advice are not adopted. This is a reference comparison, not professional approval.",
+        "video": null
       },
       "independentTrainerReview": "pending"
     },
@@ -194,7 +276,7 @@
       "id": "deadbug",
       "name": "Dead bug",
       "motion": "deadbug",
-      "geometryChecks": "Fixed limb lengths, finite coordinates and non-negative joint heights sampled throughout both sides.",
+      "geometryChecks": "Fixed limb lengths, finite coordinates and non-negative joint heights sampled throughout both sides. Human surfaces and equipment checked against phone framing.",
       "referenceCheck": {
         "provider": "National Academy of Sports Medicine (NASM)",
         "url": "https://www.nasm.org/resource-center/exercise-library/dead-bug",
@@ -215,7 +297,7 @@
       "id": "birddog",
       "name": "Bird dog",
       "motion": "birddog",
-      "geometryChecks": "Fixed limb lengths, finite coordinates and non-negative joint heights sampled throughout both sides.",
+      "geometryChecks": "Fixed limb lengths, finite coordinates and non-negative joint heights sampled throughout both sides. Human surfaces and equipment checked against phone framing.",
       "referenceCheck": {
         "provider": "National Academy of Sports Medicine (NASM)",
         "url": "https://www.nasm.org/resource-center/exercise-library/bird-dog",
@@ -236,7 +318,7 @@
       "id": "plank",
       "name": "Forearm plank",
       "motion": "plank",
-      "geometryChecks": "Fixed limb lengths, finite coordinates and non-negative joint heights sampled throughout both sides.",
+      "geometryChecks": "Fixed limb lengths, finite coordinates and non-negative joint heights sampled throughout both sides. Human surfaces and equipment checked against phone framing.",
       "referenceCheck": {
         "provider": "National Academy of Sports Medicine (NASM)",
         "url": "https://www.nasm.org/resource-center/exercise-library/plank",
@@ -257,7 +339,7 @@
       "id": "sideplank",
       "name": "Side plank",
       "motion": "sideplank",
-      "geometryChecks": "Fixed limb lengths, finite coordinates and non-negative joint heights sampled throughout both sides.",
+      "geometryChecks": "Fixed limb lengths, finite coordinates and non-negative joint heights sampled throughout both sides. Human surfaces and equipment checked against phone framing.",
       "referenceCheck": {
         "provider": "National Academy of Sports Medicine (NASM)",
         "url": "https://www.nasm.org/resource-center/exercise-library/side-plank",
@@ -278,10 +360,21 @@
       "id": "calf",
       "name": "Calf raise",
       "motion": "calf",
-      "geometryChecks": "Fixed limb lengths, finite coordinates and non-negative joint heights sampled throughout both sides.",
+      "geometryChecks": "Fixed limb lengths, finite coordinates and non-negative joint heights sampled throughout both sides. Human surfaces and equipment checked against phone framing.",
       "referenceCheck": {
-        "status": "Individual reference review pending. This release applies shared geometry corrections only.",
-        "existingReference": "https://www.nhs.uk/live-well/exercise/strength-exercises/"
+        "provider": "NHS",
+        "url": "https://www.nhs.uk/live-well/exercise/strength-exercises/",
+        "checkedOn": "2026-11-12",
+        "criteria": [
+          "Use a stable support for balance.",
+          "Keep the balls of the feet planted as the heels rise.",
+          "Lower the heels slowly without bouncing."
+        ],
+        "changes": "Add visible wall contact and rotate each foot around its planted forefoot as the heels rise.",
+        "variantNote": "The reference uses a chair for balance. Our version uses the clear wall listed in the equipment.",
+        "reviewOutcome": "updated",
+        "scope": "Movement mechanics only. Source programmes and clinical advice are not adopted. This is a reference comparison, not professional approval.",
+        "video": null
       },
       "independentTrainerReview": "pending"
     },
@@ -289,7 +382,7 @@
       "id": "ball-curl",
       "name": "Stability ball leg curl",
       "motion": "ballcurl",
-      "geometryChecks": "Fixed limb lengths, finite coordinates and non-negative joint heights sampled throughout both sides.",
+      "geometryChecks": "Fixed limb lengths, finite coordinates and non-negative joint heights sampled throughout both sides. Human surfaces and equipment checked against phone framing.",
       "referenceCheck": {
         "provider": "American Council on Exercise (ACE)",
         "url": "https://www.acefitness.org/resources/everyone/exercise-library/59/stability-ball-hamstring-curl/",
@@ -303,7 +396,7 @@
       "id": "ball-squat",
       "name": "Ball wall squat",
       "motion": "ballsquat",
-      "geometryChecks": "Fixed limb lengths, finite coordinates and non-negative joint heights sampled throughout both sides.",
+      "geometryChecks": "Fixed limb lengths, finite coordinates and non-negative joint heights sampled throughout both sides. Human surfaces and equipment checked against phone framing.",
       "referenceCheck": {
         "provider": "American Council on Exercise (ACE)",
         "url": "https://www.acefitness.org/resources/everyone/exercise-library/69/stability-ball-wall-squats/",
@@ -317,10 +410,21 @@
       "id": "wheel",
       "name": "Kneeling ab wheel rollout",
       "motion": "wheel",
-      "geometryChecks": "Fixed limb lengths, finite coordinates and non-negative joint heights sampled throughout both sides.",
+      "geometryChecks": "Fixed limb lengths, finite coordinates and non-negative joint heights sampled throughout both sides. Human surfaces and equipment checked against phone framing.",
       "referenceCheck": {
-        "status": "Individual reference review pending. This release applies shared geometry corrections only.",
-        "existingReference": "https://www.acefitness.org/resources/everyone/exercise-library/"
+        "provider": "BarBend coaching guide by Mike Dewar, CSCS",
+        "url": "https://barbend.com/best-ab-exercises/",
+        "checkedOn": "2026-11-12",
+        "criteria": [
+          "Start kneeling with hands on the wheel.",
+          "Reach with straight arms while the knees stay supported.",
+          "Move the hips and chest together and stop before the lower back arches."
+        ],
+        "changes": "Keep hands on the wheel axle and arms extended throughout the short rollout while preserving knee contact.",
+        "variantNote": "The comparison uses Ab Rollout. Our illustration shows a short kneeling range. This remains an advanced, optional movement.",
+        "reviewOutcome": "updated",
+        "scope": "Movement mechanics only. Source programmes and clinical advice are not adopted. This is a reference comparison, not professional approval.",
+        "video": null
       },
       "independentTrainerReview": "pending"
     },
@@ -328,10 +432,21 @@
       "id": "bench",
       "name": "Dumbbell bench press",
       "motion": "benchpress",
-      "geometryChecks": "Fixed limb lengths, finite coordinates and non-negative joint heights sampled throughout both sides.",
+      "geometryChecks": "Fixed limb lengths, finite coordinates and non-negative joint heights sampled throughout both sides. Human surfaces and equipment checked against phone framing.",
       "referenceCheck": {
-        "status": "Individual reference review pending. This release applies shared geometry corrections only.",
-        "existingReference": "https://www.acefitness.org/resources/everyone/exercise-library/"
+        "provider": "American Council on Exercise (ACE)",
+        "url": "https://www.acefitness.org/resources/everyone/exercise-library/19/chest-press/",
+        "checkedOn": "2026-11-12",
+        "criteria": [
+          "Keep the head, shoulders and hips supported on the bench.",
+          "Keep feet planted on the floor.",
+          "Press above the chest and lower smoothly without bouncing."
+        ],
+        "changes": "Keep the existing press path and floor-level feet. Adjust the torso and head height to rest the fuller human figure on the bench.",
+        "variantNote": "Bench shape and individual grip width are simplified.",
+        "reviewOutcome": "updated",
+        "scope": "Movement mechanics only. Source programmes and clinical advice are not adopted. This is a reference comparison, not professional approval.",
+        "video": null
       },
       "independentTrainerReview": "pending"
     },
@@ -339,10 +454,21 @@
       "id": "cable-row",
       "name": "Seated cable row",
       "motion": "cablerow",
-      "geometryChecks": "Fixed limb lengths, finite coordinates and non-negative joint heights sampled throughout both sides.",
+      "geometryChecks": "Fixed limb lengths, finite coordinates and non-negative joint heights sampled throughout both sides. Human surfaces and equipment checked against phone framing.",
       "referenceCheck": {
-        "status": "Individual reference review pending. This release applies shared geometry corrections only.",
-        "existingReference": "https://www.acefitness.org/resources/everyone/exercise-library/"
+        "provider": "American Council on Exercise (ACE)",
+        "url": "https://www.acefitness.org/resources/everyone/exercise-library/48/seated-row/",
+        "checkedOn": "2026-11-12",
+        "criteria": [
+          "Sit tall with a steady trunk and feet supported.",
+          "Draw elbows close to the ribs and the handle towards the abdomen.",
+          "Return the arms forward under control."
+        ],
+        "changes": "Retain the steady seated pull and adjust the wording to identify the abdomen as the handle destination.",
+        "variantNote": "The reference is the low-pulley cable row. Our machine is a schematic. Follow the actual station’s setup instructions.",
+        "reviewOutcome": "retained",
+        "scope": "Movement mechanics only. Source programmes and clinical advice are not adopted. This is a reference comparison, not professional approval.",
+        "video": null
       },
       "independentTrainerReview": "pending"
     },
@@ -350,10 +476,21 @@
       "id": "lat-pull",
       "name": "Lat pulldown",
       "motion": "latpull",
-      "geometryChecks": "Fixed limb lengths, finite coordinates and non-negative joint heights sampled throughout both sides.",
+      "geometryChecks": "Fixed limb lengths, finite coordinates and non-negative joint heights sampled throughout both sides. Human surfaces and equipment checked against phone framing.",
       "referenceCheck": {
-        "status": "Individual reference review pending. This release applies shared geometry corrections only.",
-        "existingReference": "https://www.acefitness.org/resources/everyone/exercise-library/"
+        "provider": "American Council on Exercise (ACE)",
+        "url": "https://www.acefitness.org/resources/everyone/exercise-library/158/seated-lat-pulldown/",
+        "checkedOn": "2026-11-12",
+        "criteria": [
+          "Use the thigh support and keep the torso steady.",
+          "Pull the bar in front of the head towards the upper chest.",
+          "Return overhead without jerking or pulling behind the neck."
+        ],
+        "changes": "Add a visible thigh pad and lower the front bar path towards the upper chest.",
+        "variantNote": "The machine and grip width are simplified. Adjust your own seat and pad using the manufacturer’s instructions.",
+        "reviewOutcome": "updated",
+        "scope": "Movement mechanics only. Source programmes and clinical advice are not adopted. This is a reference comparison, not professional approval.",
+        "video": null
       },
       "independentTrainerReview": "pending"
     },
@@ -361,10 +498,21 @@
       "id": "leg-press",
       "name": "Leg press",
       "motion": "legpress",
-      "geometryChecks": "Fixed limb lengths, finite coordinates and non-negative joint heights sampled throughout both sides.",
+      "geometryChecks": "Fixed limb lengths, finite coordinates and non-negative joint heights sampled throughout both sides. Human surfaces and equipment checked against phone framing.",
       "referenceCheck": {
-        "status": "Individual reference review pending. This release applies shared geometry corrections only.",
-        "existingReference": "https://www.acefitness.org/resources/everyone/exercise-library/"
+        "provider": "National Academy of Sports Medicine (NASM)",
+        "url": "https://www.nasm.org/resource-center/exercise-library/leg-press",
+        "checkedOn": "2026-11-12",
+        "criteria": [
+          "Keep the head, back and hips supported.",
+          "Keep feet planted against the platform and knees following the feet.",
+          "Extend smoothly without locking the knees."
+        ],
+        "changes": "Add a backrest and a platform aligned with the feet. Shorten extension so the knees remain bent and keep the trunk fixed.",
+        "variantNote": "This is a schematic seated leg press. Machines differ in seat angle, platform travel and adjustment. Use the instructions on your machine.",
+        "reviewOutcome": "updated",
+        "scope": "Movement mechanics only. Source programmes and clinical advice are not adopted. This is a reference comparison, not professional approval.",
+        "video": null
       },
       "independentTrainerReview": "pending"
     },
@@ -372,10 +520,21 @@
       "id": "barbell-rdl",
       "name": "Barbell Romanian deadlift",
       "motion": "barbellhinge",
-      "geometryChecks": "Fixed limb lengths, finite coordinates and non-negative joint heights sampled throughout both sides.",
+      "geometryChecks": "Fixed limb lengths, finite coordinates and non-negative joint heights sampled throughout both sides. Human surfaces and equipment checked against phone framing.",
       "referenceCheck": {
-        "status": "Individual reference review pending. This release applies shared geometry corrections only.",
-        "existingReference": "https://www.acefitness.org/resources/everyone/exercise-library/"
+        "provider": "National Academy of Sports Medicine (NASM)",
+        "url": "https://www.nasm.org/resource-center/exercise-library/romanian-deadlift-barbell",
+        "checkedOn": "2026-11-12",
+        "criteria": [
+          "Start with the bar just in front of the thighs.",
+          "Hinge at the hips with soft knees and a steady trunk.",
+          "Keep the bar close to the legs during the descent and return."
+        ],
+        "changes": "Place the starting bar in front of the thighs and include the full bar width in camera framing. Retain the close hinge path.",
+        "variantNote": "",
+        "reviewOutcome": "updated",
+        "scope": "Movement mechanics only. Source programmes and clinical advice are not adopted. This is a reference comparison, not professional approval.",
+        "video": null
       },
       "independentTrainerReview": "pending"
     },
@@ -383,10 +542,21 @@
       "id": "curl",
       "name": "Dumbbell curl",
       "motion": "curl",
-      "geometryChecks": "Fixed limb lengths, finite coordinates and non-negative joint heights sampled throughout both sides.",
+      "geometryChecks": "Fixed limb lengths, finite coordinates and non-negative joint heights sampled throughout both sides. Human surfaces and equipment checked against phone framing.",
       "referenceCheck": {
-        "status": "Individual reference review pending. This release applies shared geometry corrections only.",
-        "existingReference": "https://www.acefitness.org/resources/everyone/exercise-library/"
+        "provider": "Mayo Clinic, Edward R. Laskowski, MD",
+        "url": "https://www.mayoclinic.org/healthy-lifestyle/fitness/multimedia/biceps-curl/vid-20084675",
+        "checkedOn": "2026-11-12",
+        "criteria": [
+          "Keep elbows beside the body.",
+          "Curl without swinging the trunk or elbows.",
+          "Keep wrists straight during a controlled return."
+        ],
+        "changes": "Retain the fixed-elbow curl and add the straight-wrist cue.",
+        "variantNote": "The reference demonstrates one arm. Our illustration shows both arms curling together.",
+        "reviewOutcome": "retained",
+        "scope": "Movement mechanics only. Source programmes and clinical advice are not adopted. This is a reference comparison, not professional approval.",
+        "video": null
       },
       "independentTrainerReview": "pending"
     },
@@ -394,10 +564,21 @@
       "id": "march",
       "name": "Brisk march",
       "motion": "march",
-      "geometryChecks": "Fixed limb lengths, finite coordinates and non-negative joint heights sampled throughout both sides.",
+      "geometryChecks": "Fixed limb lengths, finite coordinates and non-negative joint heights sampled throughout both sides. Human surfaces and equipment checked against phone framing.",
       "referenceCheck": {
-        "status": "Individual reference review pending. This release applies shared geometry corrections only.",
-        "existingReference": "https://www.acefitness.org/resources/everyone/exercise-library/"
+        "provider": "NHS",
+        "url": "https://www.nhs.uk/live-well/exercise/how-to-warm-up-before-exercising/",
+        "checkedOn": "2026-11-12",
+        "criteria": [
+          "March with an upright comfortable posture.",
+          "Keep both elbows bent and pump the arms with the steps.",
+          "Alternate the leading leg and opposite arm."
+        ],
+        "changes": "Bend both arms and show the opposite arm moving forward with each lifted leg.",
+        "variantNote": "Our illustration stays in place. The reference also suggests marching forwards and backwards.",
+        "reviewOutcome": "updated",
+        "scope": "Movement mechanics only. Source programmes and clinical advice are not adopted. This is a reference comparison, not professional approval.",
+        "video": null
       },
       "independentTrainerReview": "pending"
     }

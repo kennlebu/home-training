@@ -1,6 +1,7 @@
+import {humanSurfaces} from '../src/human-model.js';
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {poseFor,modelFrame} from '../src/model.js';
+import {poseFor,modelFrame,equipmentGeometry} from '../src/model.js';
 import {EXERCISES} from '../src/exercises.js';
 import {SEGMENTS,mirrorPose,solveLimb} from '../src/movement-rig.js';
 import {MOVEMENT_SOURCES,permittedVideo,videoEmbedURL} from '../src/movement-sources.js';
@@ -62,4 +63,54 @@ test('the complete animation fits a small phone canvas in front, side and rotate
    }
   }
  }
+});
+
+const kneeAngle=p=>{const a=p.lp.map((v,i)=>v-p.lk[i]),b=p.la.map((v,i)=>v-p.lk[i]);return Math.acos(a.reduce((sum,v,i)=>sum+v*b[i],0)/(Math.hypot(...a)*Math.hypot(...b)))*180/Math.PI;};
+test('all 27 exercises have a specific professional reference and the remaining sixteen record their comparison',()=>{
+ assert.equal(Object.keys(MOVEMENT_SOURCES).length,EXERCISES.length);
+ for(const e of EXERCISES){const source=MOVEMENT_SOURCES[e.id];assert.ok(source?.provider&&source?.changes,e.id);assert.ok(new URL(source.url).pathname.split('/').filter(Boolean).length>=1&&!/exercise-library\/?$/.test(source.url),e.id);assert.equal(source.checkedOn,'2026-11-12');}
+ const ids=['squat','band-bridge','row','band-row','floor-press','wall-push','press','calf','wheel','bench','cable-row','lat-pull','leg-press','barbell-rdl','curl','march'];
+ for(const id of ids){const source=MOVEMENT_SOURCES[id];assert.equal(source.criteria.length,3,id);assert.ok(['updated','retained'].includes(source.reviewOutcome));assert.match(source.scope,/not professional approval/);}
+ for(const id of ['band-row','calf','wheel','leg-press','curl'])assert.ok(MOVEMENT_SOURCES[id].variantNote.length>30,id);
+});
+test('wall push up keeps hands and feet fixed while the body leans as one line',()=>{
+ const start=poseFor('wallpush',0).pose;
+ for(let i=0;i<=20;i++){const p=poseFor('wallpush',i/20).pose;for(const key of ['lh','rh','la','ra','lf','rf'])near(distance(start[key],p[key]),0);
+  const ratio=(p.hip[1]-p.la[1])/(p.chest[1]-p.la[1]);near(p.hip[2],p.la[2]+ratio*(p.chest[2]-p.la[2]));
+ }
+});
+test('supported calf raise pivots around planted forefeet and keeps hands on the wall',()=>{
+ const start=poseFor('calf',0).pose,end=poseFor('calf',1).pose;assert.ok(end.la[1]>start.la[1]+.07);
+ for(let i=0;i<=20;i++){const p=poseFor('calf',i/20).pose;for(const key of ['lf','rf','lh','rh'])near(distance(start[key],p[key]),0);near(distance(p.la,p.lf),distance(start.la,start.lf));near(p.lh[2],.55);}
+});
+test('floor press reaches gentle floor contact at the bottom and remains above the floor',()=>{
+ const p=poseFor('floorpress',0).pose;near(p.le[1],.055,.002);near(p.re[1],.055,.002);near(p.lh[0],p.le[0],.002);near(p.lh[2],p.le[2],.002);
+ for(let i=0;i<=30;i++){const p=poseFor('floorpress',i/30).pose;assert.ok(p.le[1]>=.05&&p.re[1]>=.05);near(p.chest[1],.15);}
+});
+test('kneeling rollout keeps straight arms on the wheel and knees anchored',()=>{
+ const start=poseFor('wheel',0).pose;
+ for(let i=0;i<=20;i++){const p=poseFor('wheel',i/20).pose;for(const side of ['l','r']){near(p[side+'h'][1],.13,.00001);near(distance(p[side+'s'],p[side+'h']),SEGMENTS.upperArm+SEGMENTS.forearm);near(distance(start[side+'k'],p[side+'k']),0);}}
+});
+test('leg press has supported trunk, an aligned platform and no locked knees',()=>{
+ const first=poseFor('legpress',0).pose;near(kneeAngle(first),90,3);
+ for(let i=0;i<=20;i++){const p=poseFor('legpress',i/20).pose;near(distance(first.chest,p.chest),0);near(distance(first.hip,p.hip),0);assert.ok(kneeAngle(p)<155);assert.ok(kneeAngle(p)>85);const {platform,backrest}=equipmentGeometry('legpress',p);assert.equal(backrest.length,2);const a=platform[0],b=platform[3];const slope=(b[2]-a[2])/(b[1]-a[1]);for(const key of ['la','lf'])near(p[key][2],a[2]+slope*(p[key][1]-a[1]),.025);}
+});
+test('row starts below the shoulders, pulldown finishes at the upper chest and marching pumps opposite arms',()=>{
+ const row=poseFor('row',0).pose;near(row.lh[2],row.ls[2]);near(row.lh[0],row.ls[0]);assert.ok(poseFor('row',1).pose.le[2]<row.ls[2]);
+ const lat=poseFor('latpull',1).pose;near(lat.lh[1],lat.chest[1]+.06);assert.ok(lat.lh[2]>lat.head[2]+.1);assert.equal(equipmentGeometry('latpull',lat).thighpad.length,2);
+ for(const side of [0,1]){const p=poseFor('march',1,side).pose;assert.ok(distance(p.ls,p.lh)<.64&&distance(p.rs,p.rh)<.64);assert.ok(side?p.rh[2]<0&&p.lh[2]>0:p.lh[2]<0&&p.rh[2]>0);}
+});
+
+test('human surfaces and full equipment stay finite and fit the phone camera in every movement',()=>{
+ for(const exercise of EXERCISES)for(const t of [0,.5,1]){
+  const {pose,center}=poseFor(exercise.motion,t),surfaces=humanSurfaces(pose,exercise.motion);
+  assert.ok(surfaces.length>1000);
+  for(const face of surfaces){assert.ok(face.normal.every(Number.isFinite));for(const point of face.points){assert.ok(point.every(Number.isFinite));assert.ok(point[1]>=0);}}
+  const points=[...surfaces.flatMap(face=>face.points),...Object.values(equipmentGeometry(exercise.motion,pose)).flat()];
+  for(const angle of [0,.5,Math.PI/2,Math.PI,Math.PI*1.5]){const w=224,h=260,frame=modelFrame(exercise.motion,angle,w,h);for(const point of points){const x=point[0]*Math.cos(angle)+point[2]*Math.sin(angle),z=-point[0]*Math.sin(angle)+point[2]*Math.cos(angle),px=frame.offsetX+x*frame.scale,py=frame.offsetY-(point[1]-center)*frame.scale+z*frame.scale*.18;assert.ok(px>3&&px<w-3&&py>3&&py<h-3,`${exercise.id} human or equipment cropped`);}}
+ }
+});
+
+test('human facial landmarks face the floor in prone movements and upwards in supine movements',()=>{
+ for(const motion of ['wheel','birddog','pushup','plank','floorpress','deadbug','bridge'])for(const t of [0,.5,1]){const p=poseFor(motion,t).pose,details=humanSurfaces(p,motion).filter(f=>f.material==='detail').flatMap(f=>f.points),faceY=details.reduce((sum,v)=>sum+v[1],0)/details.length;assert.ok(['wheel','birddog','pushup','plank'].includes(motion)?faceY<p.head[1]:faceY>p.head[1],motion);}
 });

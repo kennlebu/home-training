@@ -221,6 +221,8 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
 
 Professional reference links and optional YouTube videos
 
-NASM, ACE and Catalyst Athletics remain the owners of their respective reference material. Links and short attribution identify the professional guidance used to check our original illustrations. These organisations have not reviewed, approved or endorsed this app.
+NASM, ACE, NHS, AAOS, NSCA, Mayo Clinic, BarBend and Catalyst Athletics remain the owners of their respective reference material. Links and short attribution identify the professional guidance used to check our original illustrations. These organisations have not reviewed, approved or endorsed this app.
 
 The eight optional NASM demonstrations use YouTube's unmodified embedded player. They are not bundled or licensed for offline redistribution. NASM owns its videos and YouTube serves them under its platform terms. The embedding check and precise exercise list are recorded in movement-review.json and src/movement-sources.js. No MoveKit or MuscleWiki media is used.
+
+The remaining 16 source comparisons use the exact links in movement-review.json. Public instructions inform our original illustrations. No source photographs, character models or animation files are bundled. Equipment and one-arm versus two-arm differences are disclosed beside the references. Clinical programmes and treatment claims are outside the comparison.
