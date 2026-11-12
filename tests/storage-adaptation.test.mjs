@@ -1,8 +1,8 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {defaultProfile,createPlan,estimateSession,progressionFor} from '../dist/planner.js';
-import {validState,validProfile} from '../dist/storage.js';
-import {shortenSession,repeatRunningWeek} from '../dist/adaptation.js';
+import {defaultProfile,createPlan,estimateSession,progressionFor} from '../src/planner.js';
+import {validState,validProfile} from '../src/storage.js';
+import {shortenSession,repeatRunningWeek} from '../src/adaptation.js';
 const fixture=()=>{const p={...defaultProfile(),start:'2026-11-16'};const plan=createPlan(p);return {version:1,profile:p,sessions:plan.sessions,history:[],active:null,planSummary:plan.summary,planWarnings:plan.warnings};};
 test('generated strength and running plans survive backup validation',()=>{const s=fixture();assert.equal(validState(s),true);s.profile.goal='running';const plan=createPlan(s.profile);s.sessions=plan.sessions;assert.equal(validState(s),true);assert.equal(validProfile({...s.profile,start:'2026-02-30'}),false);});
 test('malformed backups cannot replace valid app state',()=>{const s=fixture();assert.equal(validState({...s,profile:{}}),false);assert.equal(validState({...s,sessions:[...s.sessions,s.sessions[0]]}),false);const bad=structuredClone(s);bad.sessions[0].items[0].exerciseId='unknown';assert.equal(validState(bad),false);const run=structuredClone(s);run.sessions[0].kind='run';assert.equal(validState(run),false);const invalidZone=structuredClone(s);invalidZone.profile.timezone='Not/a/timezone';assert.equal(validState(invalidZone),false);});

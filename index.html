@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en" data-palette="forest" data-appearance="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#193d32">
+<meta name="description" content="A personal workout planner for home, gym and running. Plan your week, learn movements and record your progress.">
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="icon" type="image/svg+xml" href="/icon.svg">
+<title>Home training</title>
+<script>
+try{var saved=JSON.parse(localStorage.getItem('home-training-appearance-v1')||'{}');var palette=['forest','mint','cobalt'].includes(saved.palette)?saved.palette:'forest';var appearance=['light','dark','system'].includes(saved.appearance)?saved.appearance:'light';var dark=appearance==='dark'||appearance==='system'&&matchMedia('(prefers-color-scheme: dark)').matches;document.documentElement.dataset.palette=palette;document.documentElement.dataset.appearance=appearance;document.documentElement.classList.toggle('dark',dark);document.documentElement.style.colorScheme=dark?'dark':'light';}catch{}
+</script>
+</head>
+<body>
+<div id="app"><div class="loading"><span class="brand-mark">h</span><h1>Home training</h1><p>Preparing your training space.</p></div></div>
+<div id="toast" role="status" aria-live="polite" hidden></div>
+<div id="dialog-root"></div>
+<script type="module" src="/src/main.jsx"></script>
+<noscript>This workout planner needs JavaScript to build schedules and save your records.</noscript>
+</body></html>

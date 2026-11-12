@@ -1,8 +1,8 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {defaultProfile,createPlan,eligible,estimateSession,scheduleConflicts,substitutions,progressionFor,calendarICS,dayOf,strengthSession} from '../dist/planner.js';
-import {EXERCISES,exerciseById} from '../dist/exercises.js';
-import {poseFor} from '../dist/model.js';
+import {defaultProfile,createPlan,eligible,estimateSession,scheduleConflicts,substitutions,progressionFor,calendarICS,dayOf,strengthSession} from '../src/planner.js';
+import {EXERCISES,exerciseById} from '../src/exercises.js';
+import {poseFor} from '../src/model.js';
 const profile=()=>({...defaultProfile(),start:'2026-11-16'});
 test('three 30 minute home sessions use only available equipment and fit including recovery',()=>{const p=profile(),plan=createPlan(p);assert.deepEqual(plan.errors,[]);assert.equal(plan.sessions.length,12);for(const s of plan.sessions){assert.ok(estimateSession(s)<=1800);for(const i of s.items){assert.ok(eligible(exerciseById(i.exerciseId),p,s.location));assert.ok(!exerciseById(i.exerciseId).equipment.includes('bench'));assert.ok(!exerciseById(i.exerciseId).equipment.includes('anchor'));}}});
 test('weight means one dumbbell held or one in each hand',()=>{const plan=createPlan(profile());const squat=plan.sessions[0].items.find(i=>i.exerciseId==='goblet');const press=plan.sessions[0].items.find(i=>i.exerciseId==='floor-press');assert.equal(squat.load.kg,5);assert.match(squat.load.label,/held/);assert.equal(press.load.kg,5);assert.match(press.load.label,/per hand/);});
