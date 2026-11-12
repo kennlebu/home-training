@@ -24,7 +24,7 @@
   --radius-md:calc(var(--radius) - 2px);
   --radius-lg:var(--radius);
   --radius-xl:calc(var(--radius) + 4px);
-  --font-sans:'DM Sans',system-ui,sans-serif;
+  --font-sans:'DM Sans Variable',system-ui,sans-serif;
 }
 :root{
   --radius:.75rem;

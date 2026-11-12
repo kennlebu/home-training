@@ -77,3 +77,23 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,su
 .app-dialog input[type=number],.app-dialog input[type=date],.app-dialog input[type=time]{color-scheme:inherit}
 @media(max-width:580px){.theme-trigger-label,.theme-chevron{display:none}.theme-trigger{width:44px;padding:0}.top-actions{gap:10px}.app-dialog{padding:22px 18px}.theme-menu{width:300px}}
 @media(prefers-reduced-motion:no-preference){body,.sidebar,.topbar,.card,.model-wrap,.mobile-nav{transition:background-color 140ms ease,color 140ms ease,border-color 140ms ease}}
+
+/* Shared columns keep every navigation label on the same edge. */
+.sidebar .nav button {display:grid;grid-template-columns:20px minmax(0,1fr);justify-content:start;align-items:center;gap:12px;width:100%;min-height:48px;text-align:left;padding:12px 16px;}
+.sidebar .nav-label {justify-self:start;text-align:left;}
+.nav-icon {display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;flex:none;}
+.nav-icon svg {width:18px;height:18px;flex:none;}
+.session-item button {display:block;text-align:left;}
+.theme-menu [role="menuitemradio"] {gap:8px;}
+.device-status {gap:7px;font-size:12px;color:var(--muted-foreground);white-space:normal;text-align:left;}
+.device-status svg {flex:none;}
+.update-dot {width:7px;height:7px;border-radius:50%;background:var(--primary);flex:none;}
+.device-panel {margin:24px 0;padding:20px;border:1px solid var(--border);border-radius:16px;background:var(--secondary);}
+.device-panel h3 {display:flex;align-items:center;gap:8px;margin:0 0 12px;}
+.device-panel p {margin:10px 0;}
+.device-readiness {font-weight:700;}
+.device-panel button {white-space:normal;min-height:44px;height:auto;}
+.device-panel .storage-protection,.device-panel .app-update {border-top:1px solid var(--border);padding-top:18px;margin-top:18px;}
+.inline-icon {display:inline;vertical-align:middle;margin-right:6px;}
+@media(max-width:1100px){.device-status span:not(.update-dot){display:none;}.device-status{width:38px;padding:8px;}}
+@media(max-width:680px){.device-panel{padding:16px;}.mobile-nav .nav-label{display:block;}.mobile-nav button{min-height:58px;gap:3px;}.top-actions{gap:6px;}.device-status{width:32px;min-width:32px;padding:5px;}}
