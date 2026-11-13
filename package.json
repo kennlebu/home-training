@@ -1,6 +1,20 @@
 {
   "name": "home-training",
   "version": "2.4.0",
+  "description": "A personal workout planner for home, gym and running, with offline support and original 3D movement guides.",
+  "license": "GPL-3.0-or-later",
+  "author": {
+    "name": "Kenneth Lebu",
+    "email": "kenlebu@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kennlebu/home-training.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kennlebu/home-training/issues"
+  },
+  "homepage": "https://home-training-7f3a.belcoda-foun-1669.chatgpt.site",
   "private": true,
   "type": "module",
   "scripts": {
