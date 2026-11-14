@@ -12,7 +12,7 @@ A personal workout planner for home, gym and running. Choose a goal, the equipme
 - Links each movement to professional guidance and offers eight optional NASM video demonstrations.
 - Records sets, loads and effort, with lighter-session previews and suggestions based on your recorded results.
 - Supports offline use after setup, calendar export, and backup and restore.
-- Offers three colour palettes, with Forest and Ivory as the default, plus light and dark appearances.
+- Uses the Forest studio layout, with the next workout beside its movement guide, plus three colour palettes and light and dark appearances.
 
 Your profile, schedule and workout records stay in the current browser. There are no accounts or automatic cross-device syncing. Export a backup before moving to another browser or device.
 
@@ -51,7 +51,7 @@ Wait until the app reports that it is ready offline before relying on it without
 
 The interface uses React, customised shadcn/ui components and Vite. Workout planning, saved records and the original human movement guides are in `src`. Automated checks are in `tests`.
 
-[Development notes](README.txt) describe the app structure, previous browser checks and current limitations. [Third-party notices](THIRD_PARTY_NOTICES.txt) preserve the licences and attribution for components, fonts and linked media.
+[Design notes](DESIGN.md) record the approved Forest studio direction. [Development notes](README.txt) describe the app structure, previous browser checks and current limitations. [Third-party notices](THIRD_PARTY_NOTICES.txt) preserve the licences and attribution for components, fonts and linked media.
 
 The existing deployment identity is recorded in `.openai/hosting.json`. Keep it when working on this hosted app. Use your own hosting configuration for a separate deployment. Personal workout records and credentials do not belong in this repository.
 
